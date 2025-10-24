@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"sniprun/internal/snip"
+	"github.com/mini-page/sniprun/internal/snip"
 
 	"github.com/spf13/cobra"
 )

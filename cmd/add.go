@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"sniprun/internal/security"
-	"sniprun/internal/snip"
+	"github.com/mini-page/sniprun/internal/security"
+	"github.com/mini-page/sniprun/internal/snip"
 
 	"github.com/spf13/cobra"
 )
@@ -26,7 +26,6 @@ var addCmd = &cobra.Command{
 		snipName := args[0]
 		reader := bufio.NewReader(os.Stdin)
 
-		// Check if snip already exists
 		_, _, err := snip.FindSnip(GetConfigDir(), snipName)
 		if err == nil {
 			fmt.Printf("Snip '%s' already exists. Overwrite? (yes/no): ", snipName)
@@ -38,7 +37,6 @@ var addCmd = &cobra.Command{
 			}
 		}
 
-		// Collect snip information
 		fmt.Printf("Creating snip: %s\n\n", snipName)
 
 		fmt.Print("Description: ")
@@ -59,15 +57,12 @@ var addCmd = &cobra.Command{
 
 		var argsList []string
 		if argsInput != "" {
-			parts := strings.Split(argsInput, ",")
-			for _, part := range parts {
+			for _, part := range strings.Split(argsInput, ",") {
 				argsList = append(argsList, strings.TrimSpace(part))
 			}
-
 			fmt.Println("\nUse placeholders in command like: {{branch}}, {{message}}")
 		}
 
-		// Security validation
 		fmt.Println("\nValidating command security...")
 		result, err := security.ValidateCommand(command)
 		if err != nil {
@@ -77,7 +72,7 @@ var addCmd = &cobra.Command{
 			fmt.Fprintf(os.Stderr, "Reason: %s\n", result.Reason)
 			os.Exit(1)
 		} else if result.RiskLevel == security.RiskWarning {
-			fmt.Printf("⚠️  Warning: %s\n", result.Reason)
+			fmt.Printf(⚠️  Warning: %s\n", result.Reason)
 			if !security.PromptUserConfirmation(command, "Add this snip anyway?") {
 				fmt.Println("Cancelled")
 				return
@@ -86,7 +81,6 @@ var addCmd = &cobra.Command{
 			fmt.Println("✓ Command validated")
 		}
 
-		// Create snip
 		s := &snip.Snip{
 			Name:        snipName,
 			Description: description,
@@ -96,7 +90,6 @@ var addCmd = &cobra.Command{
 			Trust:       "local",
 		}
 
-		// Save to local directory
 		localPath := filepath.Join(GetConfigDir(), "snips", "local", snipName+".yaml")
 		if err := snip.SaveSnip(s, localPath); err != nil {
 			fmt.Fprintf(os.Stderr, "Error saving snip: %v\n", err)

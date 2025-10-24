@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"sniprun/cmd"
+	"github.com/mini-page/sniprun/cmd"
 )
 
 func main() {

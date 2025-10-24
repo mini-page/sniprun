@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"sniprun/internal/repo"
+	"github.com/mini-page/sniprun/internal/repo"
 
 	"github.com/spf13/cobra"
 )
@@ -21,7 +21,7 @@ var updateCmd = &cobra.Command{
 		fmt.Println("Updating community snips...")
 
 		communityDir := GetConfigDir() + "/snips/community"
-		
+
 		count, err := repo.SyncCommunitySnips(communityDir)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error syncing snips: %v\n", err)

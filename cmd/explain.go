@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"sniprun/internal/snip"
+	"github.com/mini-page/sniprun/internal/snip"
 
 	"github.com/spf13/cobra"
 )
@@ -28,7 +28,6 @@ var explainCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		// Display snip details
 		fmt.Printf("Snip: %s\n", s.Name)
 		fmt.Printf("Description: %s\n", s.Description)
 		fmt.Printf("Category: %s\n", s.Category)
@@ -41,7 +40,7 @@ var explainCmd = &cobra.Command{
 		if len(s.Args) > 0 {
 			fmt.Printf("Arguments required: %s\n", strings.Join(s.Args, ", "))
 			fmt.Printf("Usage: sniprun %s <%s>\n", s.Name, strings.Join(s.Args, "> <"))
-			
+
 			fmt.Println("\nExample with placeholders:")
 			exampleArgs := make([]string, len(s.Args))
 			for i, arg := range s.Args {

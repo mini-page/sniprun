@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"sniprun/internal/security"
-	"sniprun/internal/snip"
+	"github.com/mini-page/sniprun/internal/security"
+	"github.com/mini-page/sniprun/internal/snip"
 
 	"github.com/spf13/cobra"
 )
