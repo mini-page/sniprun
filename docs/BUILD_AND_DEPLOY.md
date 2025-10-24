@@ -132,8 +132,8 @@ Create a Homebrew tap:
 # Formula/sniprun.rb
 class Sniprun < Formula
   desc "Run complex commands with short, memorable snips"
-  homepage "https://github.com/yourusername/sniprun"
-  url "https://github.com/yourusername/sniprun/archive/v0.1.0.tar.gz"
+  https://github.com/mini-page/sniprun
+  url "https://github.com/mini-page/sniprun/archive/v0.1.0.tar.gz"
   sha256 "..."
   license "MIT"
 
@@ -151,7 +151,7 @@ end
 
 Install with:
 ```bash
-brew tap yourusername/sniprun
+brew tap mini-page/sniprun
 brew install sniprun
 ```
 
@@ -171,7 +171,7 @@ ShortDescription: Run complex commands with short, memorable snips
 Installers:
   - Architecture: x64
     InstallerType: portable
-    InstallerUrl: https://github.com/yourusername/sniprun/releases/download/v0.1.0/sniprun-windows-amd64.exe
+    InstallerUrl: https://github.com/mini-page/sniprun/releases/download/v0.1.0/sniprun-windows-amd64.exe
     InstallerSha256: ...
 ```
 
@@ -191,7 +191,7 @@ pkgver=0.1.0
 pkgrel=1
 pkgdesc="Run complex commands with short, memorable snips"
 arch=('x86_64')
-url="https://github.com/yourusername/sniprun"
+url="https://github.com/mini-page/sniprun"
 license=('MIT')
 depends=()
 makedepends=('go')

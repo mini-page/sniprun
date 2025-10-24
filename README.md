@@ -1,4 +1,4 @@
-<!-- Placeholder for sniprun logo -->
+![sniprun logo](./assets/logo.png)
 
 # sniprun
 
@@ -21,7 +21,7 @@
 
 ```bash
 # Install
-go install github.com/yourusername/sniprun@latest
+go install github.com/mini-page/sniprun@latest
 
 # Fetch community snips
 sniprun update
@@ -41,7 +41,7 @@ sniprun git-reset-hard main
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/sniprun
+git clone https://github.com/mini-page/sniprun
 cd sniprun
 go build -o sniprun
 sudo mv sniprun /usr/local/bin/
@@ -201,6 +201,6 @@ MIT License - see LICENSE file
 
 ## ❓ Support
 
-- Issues: https://github.com/yourusername/sniprun/issues
-- Discussions: https://github.com/yourusername/sniprun/discussions
+- Issues: https://github.com/mini-page/sniprun/issues
+- Discussions: https://github.com/mini-page/sniprun/discussions
 - Community snips: https://github.com/sniprun/snips
