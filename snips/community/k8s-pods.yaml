@@ -1,0 +1,5 @@
+name: k8s-pods
+description: List Kubernetes pods in the current namespace
+command: kubectl get pods
+category: kubernetes
+trust: community

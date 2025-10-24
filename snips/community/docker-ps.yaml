@@ -1,0 +1,5 @@
+name: docker-ps
+description: List all running Docker containers
+command: docker ps
+category: docker
+trust: community
