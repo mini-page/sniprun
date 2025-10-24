@@ -1,4 +1,4 @@
-module sniprun
+module github.com/mini-page/sniprun
 
 go 1.21
 
