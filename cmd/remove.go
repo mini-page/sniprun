@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"strings"
+
 
 	"github.com/mini-page/sniprun/internal/security"
 	"github.com/mini-page/sniprun/internal/snip"

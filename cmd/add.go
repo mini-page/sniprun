@@ -72,7 +72,7 @@ var addCmd = &cobra.Command{
 			fmt.Fprintf(os.Stderr, "Reason: %s\n", result.Reason)
 			os.Exit(1)
 		} else if result.RiskLevel == security.RiskWarning {
-			fmt.Printf(⚠️  Warning: %s\n", result.Reason)
+			fmt.Printf("⚠️ Warning: %s\n", result.Reason)
 			if !security.PromptUserConfirmation(command, "Add this snip anyway?") {
 				fmt.Println("Cancelled")
 				return
